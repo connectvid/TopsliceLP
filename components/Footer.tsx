@@ -10,12 +10,13 @@ export default function Footer() {
   return (
     <footer id="footer" className="border-t border-zinc-100 bg-white">
       <div className="container-width py-14 sm:py-16">
-        {/* Top row: logo + email CTA */}
+        {/* Top row */}
         <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <Logo />
             <p className="mt-3 max-w-xs text-[0.88rem] leading-relaxed text-zinc-400">
-              Building the future of digital infrastructure — one company at a time.
+              Acquiring and scaling profitable digital businesses. Self-funded.
+              Founder-friendly. Long-term.
             </p>
           </div>
 
@@ -33,7 +34,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Divider */}
+        {/* Bottom row */}
         <div className="mt-10 pt-6 border-t border-zinc-100 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-5 flex-wrap">
             {links.map((l) => (

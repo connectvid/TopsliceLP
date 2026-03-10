@@ -3,9 +3,9 @@ import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Topslice HQ — Building the Future of Digital Infrastructure",
+  title: "Topslice HQ | Acquiring & Scaling Profitable Digital Businesses",
   description:
-    "Topslice HQ is a New York City-based technology holding company. We build, acquire, and grow a focused portfolio of digital businesses.",
+    "New York City-based technology holding company. We acquire and scale profitable SaaS products and digital services with founder-friendly terms and lean operations.",
 };
 
 export default function RootLayout({

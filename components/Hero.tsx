@@ -36,7 +36,7 @@ export default function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-indigo-500 opacity-75" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-indigo-600" />
             </span>
-            New York City &middot; Technology Holding Company
+            Founder-Led &middot; New York City
           </span>
         </motion.div>
 
@@ -45,20 +45,21 @@ export default function Hero() {
           {...fade(0.08)}
           className="mt-7 text-[2.5rem] sm:text-[3.25rem] md:text-[3.75rem] lg:text-[4.25rem] font-bold tracking-[-0.035em] leading-[1.08] text-zinc-950"
         >
-          We build & scale
+          We acquire & grow
           <br />
           <span className="bg-gradient-to-r from-indigo-600 via-violet-600 to-indigo-600 bg-clip-text text-transparent">
-            digital companies
+            profitable digital businesses
           </span>
         </motion.h1>
 
         {/* Subhead */}
         <motion.p
           {...fade(0.16)}
-          className="mx-auto mt-5 max-w-[500px] text-[1.05rem] leading-relaxed text-zinc-500"
+          className="mx-auto mt-5 max-w-[540px] text-[1.05rem] leading-relaxed text-zinc-500"
         >
-          We build, acquire, and grow a focused portfolio of digital businesses
-          from our base in New York City.
+          Topslice HQ is a technology holding company focused on SaaS products
+          and digital services with strong unit economics. We keep founders
+          involved, operate lean, and compound growth over years — not quarters.
         </motion.p>
 
         {/* CTAs */}
@@ -70,14 +71,14 @@ export default function Hero() {
             href="#what-we-do"
             className="group flex items-center gap-2 rounded-full bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white shadow-lg shadow-zinc-900/10 transition-all hover:bg-zinc-800 hover:shadow-xl hover:shadow-zinc-900/15 active:scale-[0.98]"
           >
-            See What We Do
+            Our Approach
             <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
           </a>
           <a
             href="#about"
             className="flex items-center rounded-full border border-zinc-200 bg-white px-5 py-2.5 text-sm font-medium text-zinc-700 shadow-sm transition-all hover:border-zinc-300 hover:bg-zinc-50 active:scale-[0.98]"
           >
-            Learn More
+            About Topslice
           </a>
         </motion.div>
       </div>

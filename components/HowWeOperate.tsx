@@ -6,17 +6,17 @@ const steps = [
   {
     num: "01",
     title: "Identify",
-    body: "We research underserved markets and spot digital opportunities with strong fundamentals and clear upside.",
+    body: "We scan for digital businesses in underserved niches — products with strong retention, recurring revenue, and room for operational improvement.",
   },
   {
     num: "02",
-    title: "Build or Acquire",
-    body: "We build from scratch or acquire existing products — then improve the technology, operations, and growth engine.",
+    title: "Acquire or Build",
+    body: "For acquisitions, we move quickly and keep founders involved. For new builds, we start with a lean MVP and validate before scaling. Fundamentals first.",
   },
   {
     num: "03",
-    title: "Scale",
-    body: "We compound growth through disciplined SEO, product iteration, and lean, capital-efficient operations.",
+    title: "Compound",
+    body: "We grow through organic channels — SEO, product iteration, and strategic partnerships. No aggressive paid spend. Patient capital, disciplined execution.",
   },
 ];
 
@@ -38,6 +38,10 @@ export default function HowWeOperate() {
           <h2 className="mt-2 text-3xl sm:text-[2.25rem] font-bold tracking-[-0.025em] text-zinc-950 leading-tight">
             How we operate
           </h2>
+          <p className="mt-3 text-zinc-500 text-[1.02rem] leading-relaxed max-w-lg">
+            A repeatable playbook built around capital efficiency, organic growth,
+            and long-term ownership.
+          </p>
         </motion.div>
 
         <div className="mt-10 grid gap-px rounded-2xl border border-zinc-200 bg-zinc-200 overflow-hidden sm:grid-cols-3">

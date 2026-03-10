@@ -9,6 +9,7 @@ interface Vertical {
   label: string;
   title: string;
   description: string;
+  points: string[];
 }
 
 const verticals: Vertical[] = [
@@ -17,14 +18,24 @@ const verticals: Vertical[] = [
     label: "Software",
     title: "SaaS Products",
     description:
-      "We build and operate software products that solve real problems — spanning AI, marketing automation, finance tools, and digital infrastructure.",
+      "We acquire or build software products with strong retention and clear unit economics — then improve the product, tighten operations, and scale through organic channels.",
+    points: [
+      "AI & automation tools",
+      "Marketing & analytics platforms",
+      "Finance & billing infrastructure",
+    ],
   },
   {
     icon: Briefcase,
     label: "Services",
-    title: "Business Formation",
+    title: "Business Formation & Services",
     description:
-      "We run lean, SEO-driven services that help entrepreneurs start, formalize, and grow their businesses quickly and affordably.",
+      "We operate SEO-driven service businesses that help entrepreneurs launch and formalize their companies. High-intent traffic, lean fulfillment, predictable revenue.",
+    points: [
+      "LLC & incorporation services",
+      "Compliance & registered agents",
+      "Entrepreneur-focused tooling",
+    ],
   },
 ];
 
@@ -42,11 +53,11 @@ export default function WhatWeDo() {
         <motion.div {...fadeUp(0)} className="max-w-2xl">
           <p className="text-sm font-semibold text-indigo-600">What We Do</p>
           <h2 className="mt-2 text-3xl sm:text-[2.25rem] font-bold tracking-[-0.025em] text-zinc-950 leading-tight">
-            Two verticals. One mission.
+            Two focused areas. Different playbooks.
           </h2>
           <p className="mt-3 text-zinc-500 text-[1.02rem] leading-relaxed max-w-lg">
-            We focus on building durable, profitable businesses at the
-            intersection of software and services.
+            We&apos;ve built separate operating models for software and services —
+            each with its own growth mechanics and path to profitability.
           </p>
         </motion.div>
 
@@ -69,6 +80,17 @@ export default function WhatWeDo() {
               <p className="mt-2 text-[0.92rem] leading-relaxed text-zinc-500">
                 {v.description}
               </p>
+              <ul className="mt-4 space-y-1.5">
+                {v.points.map((p) => (
+                  <li
+                    key={p}
+                    className="flex items-center gap-2 text-[0.85rem] text-zinc-400"
+                  >
+                    <span className="h-1 w-1 rounded-full bg-indigo-600/40 flex-shrink-0" />
+                    {p}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>

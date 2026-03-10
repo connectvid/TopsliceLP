@@ -31,12 +31,13 @@ export default function About() {
           <div className="relative">
             <p className="text-sm font-semibold text-indigo-400">About Us</p>
             <h2 className="mt-3 text-2xl sm:text-3xl font-bold tracking-[-0.025em] text-white leading-tight">
-              Built by founders. For builders.
+              Built by operators.<br className="hidden sm:block" /> Backed by outcomes.
             </h2>
             <p className="mx-auto mt-4 max-w-md text-[0.98rem] leading-relaxed text-zinc-400">
-              Topslice HQ LLC is a New York-based technology holding company. We
-              operate lean, move fast, and build products that create real value
-              for real people.
+              Topslice HQ is founder-led and self-funded. We don&apos;t raise
+              venture capital — we deploy our own capital into businesses we
+              understand and can improve. Our incentives are aligned with the
+              founders and operators we work with.
             </p>
             <div className="mt-6 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[0.8rem] text-zinc-400">
               <MapPin className="h-3.5 w-3.5 text-indigo-400" />
