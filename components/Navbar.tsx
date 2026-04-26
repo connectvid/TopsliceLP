@@ -6,8 +6,8 @@ import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
 
 const links = [
-  { label: "About", href: "#about" },
-  { label: "What We Do", href: "#what-we-do" },
+  { label: "Products", href: "#products" },
+  { label: "Careers", href: "#careers" },
 ];
 
 export default function Navbar() {
@@ -22,10 +22,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-[background,border,box-shadow] duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/80 backdrop-blur-xl border-b border-zinc-200/50 shadow-[0_1px_2px_rgba(0,0,0,0.03)]"
-          : "bg-transparent border-b border-transparent"
+          ? "bg-white/90 backdrop-blur-xl border-b border-orange-100/50 shadow-sm"
+          : "bg-transparent"
       }`}
     >
       <nav className="container-width flex h-16 items-center justify-between">
@@ -33,64 +33,59 @@ export default function Navbar() {
           <Logo />
         </a>
 
-        {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden sm:flex items-center gap-8">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-[0.84rem] font-medium text-zinc-500 transition-colors hover:text-zinc-900"
+              className="text-sm font-medium text-zinc-500 transition-colors hover:text-[#FC6700]"
             >
               {l.label}
             </a>
           ))}
           <a
-            href="#footer"
-            className="rounded-full bg-zinc-900 px-5 py-2 text-[0.84rem] font-medium text-white transition-all hover:bg-zinc-800 active:scale-[0.98]"
+            href="mailto:hello@topslice.io"
+            className="rounded-full bg-[#FC6700] px-5 py-2 text-sm font-medium text-white transition-all hover:bg-[#E55D00] active:scale-[0.98]"
           >
-            Contact Us
+            Contact
           </a>
         </div>
 
-        {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden rounded-lg p-2 text-zinc-700 hover:bg-zinc-100 transition-colors"
+          className="sm:hidden p-2 text-zinc-500"
           aria-label="Menu"
         >
-          {open ? <X size={18} /> : <Menu size={18} />}
+          {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </nav>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {open && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden overflow-hidden border-t border-zinc-100 bg-white/95 backdrop-blur-xl"
+            className="sm:hidden overflow-hidden bg-white border-t border-orange-50"
           >
-            <div className="container-width py-3 flex flex-col gap-1">
+            <div className="container-width py-4 flex flex-col gap-2">
               {links.map((l) => (
                 <a
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900 transition-colors"
+                  className="px-3 py-2.5 text-sm font-medium text-zinc-600 rounded-lg hover:bg-orange-50"
                 >
                   {l.label}
                 </a>
               ))}
-              <div className="pt-2">
-                <a
-                  href="#footer"
-                  onClick={() => setOpen(false)}
-                  className="flex items-center justify-center rounded-full bg-zinc-900 py-2.5 text-sm font-medium text-white"
-                >
-                  Contact Us
-                </a>
-              </div>
+              <a
+                href="mailto:hello@topslice.io"
+                onClick={() => setOpen(false)}
+                className="mt-2 flex justify-center rounded-full bg-[#FC6700] py-2.5 text-sm font-medium text-white"
+              >
+                Contact
+              </a>
             </div>
           </motion.div>
         )}

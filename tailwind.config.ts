@@ -12,30 +12,31 @@ const config: Config = {
       },
       colors: {
         brand: {
-          50: "#eef2ff",
-          100: "#e0e7ff",
-          200: "#c7d2fe",
-          400: "#818cf8",
-          500: "#6366f1",
-          600: "#4f46e5",
-          700: "#4338ca",
+          50: "#FFF7ED",
+          100: "#FFEDD5",
+          200: "#FED7AA",
+          400: "#FD8C40",
+          500: "#FC6700",
+          600: "#E55D00",
+          700: "#C24E00",
         },
       },
       keyframes: {
-        "aurora": {
+        aurora: {
           "0%, 100%": { transform: "translate(0, 0) scale(1)" },
           "33%": { transform: "translate(30px, -20px) scale(1.1)" },
           "66%": { transform: "translate(-20px, 15px) scale(0.95)" },
         },
-        "fade-in-up": {
-          "0%": { opacity: "0", transform: "translateY(24px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
         },
       },
       animation: {
-        "aurora": "aurora 15s ease-in-out infinite",
+        aurora: "aurora 15s ease-in-out infinite",
         "aurora-slow": "aurora 20s ease-in-out infinite reverse",
-        "fade-in-up": "fade-in-up 0.6s ease-out forwards",
+        "aurora-mid": "aurora 18s ease-in-out infinite 5s",
+        marquee: "marquee 25s linear infinite",
       },
     },
   },

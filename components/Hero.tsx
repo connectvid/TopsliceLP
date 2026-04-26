@@ -1,90 +1,102 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 
 const fade = (delay: number) => ({
-  initial: { opacity: 0, y: 16 },
+  initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5, delay, ease: [0.25, 0.4, 0.25, 1] },
+  transition: { duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] },
 });
+
+const marqueeItems = [
+  "SaaS Platforms",
+  "Business Services",
+  "Media Properties",
+  "Digital Products",
+  "Content & Publishing",
+  "Formation & Compliance",
+  "Remote-First",
+  "10+ Companies",
+];
 
 export default function Hero() {
   return (
-    <section className="relative isolate flex min-h-[85dvh] items-center justify-center overflow-hidden bg-white">
-      {/* Aurora gradient orbs */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/3 w-[800px] h-[500px] rounded-full bg-gradient-to-br from-indigo-200/60 via-violet-200/40 to-transparent blur-[100px] animate-aurora" />
-        <div className="absolute right-0 bottom-0 translate-x-1/4 translate-y-1/4 w-[500px] h-[500px] rounded-full bg-gradient-to-tl from-blue-100/50 via-indigo-100/30 to-transparent blur-[100px] animate-aurora-slow" />
+    <section className="relative min-h-[100dvh] flex items-center bg-white overflow-hidden">
+      {/* Animated gradient orbs */}
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute top-0 right-0 w-[900px] h-[900px] rounded-full bg-[#FC6700]/[0.14] blur-[160px] -translate-y-1/4 translate-x-1/4 animate-aurora" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full bg-[#FC6700]/[0.10] blur-[130px] translate-y-1/3 -translate-x-1/4 animate-aurora-slow" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-orange-200/[0.18] blur-[120px] animate-aurora-mid" />
       </div>
 
-      {/* Subtle grid */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.03]"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px)`,
-          backgroundSize: "64px 64px",
-        }}
-      />
-
-      <div className="container-width relative text-center pt-24 pb-16 sm:pt-32 sm:pb-20">
-        {/* Badge */}
-        <motion.div {...fade(0)}>
-          <span className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3.5 py-1 text-[0.78rem] font-medium text-zinc-500 shadow-sm">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-indigo-500 opacity-75" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-indigo-600" />
-            </span>
-            Founder-Led &middot; New York City
-          </span>
-        </motion.div>
-
-        {/* Headline */}
+      <div className="container-width relative pt-32 pb-20 sm:pt-44 sm:pb-32">
         <motion.h1
-          {...fade(0.08)}
-          className="mt-7 text-[2.5rem] sm:text-[3.25rem] md:text-[3.75rem] lg:text-[4.25rem] font-bold tracking-[-0.035em] leading-[1.08] text-zinc-950"
+          {...fade(0)}
+          className="text-[3rem] sm:text-[4rem] lg:text-[5rem] font-bold tracking-[-0.04em] leading-[1] text-zinc-900"
         >
-          We acquire & grow
+          Building the future,
           <br />
-          <span className="bg-gradient-to-r from-indigo-600 via-violet-600 to-indigo-600 bg-clip-text text-transparent">
-            profitable digital businesses
-          </span>
+          <span className="text-[#FC6700]">one company at a time.</span>
         </motion.h1>
 
-        {/* Subhead */}
         <motion.p
-          {...fade(0.16)}
-          className="mx-auto mt-5 max-w-[540px] text-[1.05rem] leading-relaxed text-zinc-500"
+          {...fade(0.12)}
+          className="mt-8 max-w-lg text-[1.15rem] leading-[1.75] text-zinc-600"
         >
-          Topslice HQ is a technology holding company focused on SaaS products
-          and digital services with strong unit economics. We keep founders
-          involved, operate lean, and compound growth over years — not quarters.
+          We&apos;re a remote-first team of builders behind 10+ digital
+          companies spanning SaaS, business services, and media.
+          Everything built in-house. Everything growing.
         </motion.p>
 
-        {/* CTAs */}
+        <motion.div {...fade(0.2)} className="mt-10 flex flex-wrap items-center gap-4">
+          <a
+            href="#products"
+            className="rounded-full bg-gradient-to-b from-[#FC6700] to-[#E55D00] px-8 py-4 text-[0.9rem] font-semibold text-white shadow-lg shadow-[#FC6700]/25 transition-all hover:shadow-xl hover:shadow-[#FC6700]/35 active:scale-[0.97]"
+          >
+            What We Do
+          </a>
+          <a
+            href="#careers"
+            className="rounded-full border-2 border-[#FC6700]/30 px-8 py-4 text-[0.9rem] font-semibold text-[#FC6700] transition-all hover:bg-[#FC6700]/8 hover:border-[#FC6700]/50 active:scale-[0.97]"
+          >
+            Join the Team
+          </a>
+        </motion.div>
+
+        {/* Stats */}
         <motion.div
-          {...fade(0.24)}
-          className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3"
+          {...fade(0.3)}
+          className="mt-16 flex flex-wrap gap-10 sm:gap-14"
         >
-          <a
-            href="#what-we-do"
-            className="group flex items-center gap-2 rounded-full bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white shadow-lg shadow-zinc-900/10 transition-all hover:bg-zinc-800 hover:shadow-xl hover:shadow-zinc-900/15 active:scale-[0.98]"
-          >
-            Our Approach
-            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-          </a>
-          <a
-            href="#about"
-            className="flex items-center rounded-full border border-zinc-200 bg-white px-5 py-2.5 text-sm font-medium text-zinc-700 shadow-sm transition-all hover:border-zinc-300 hover:bg-zinc-50 active:scale-[0.98]"
-          >
-            About Topslice
-          </a>
+          {[
+            ["10+", "Companies Built"],
+            ["3", "Verticals"],
+            ["2018", "Year Founded"],
+          ].map(([val, label]) => (
+            <div key={label}>
+              <p className="text-2xl sm:text-3xl font-bold text-[#FC6700]">{val}</p>
+              <p className="mt-1 text-sm text-zinc-500">{label}</p>
+            </div>
+          ))}
         </motion.div>
       </div>
 
-      {/* Bottom fade */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent" />
+      {/* Category marquee */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6, duration: 0.8 }}
+        className="absolute bottom-10 inset-x-0 overflow-hidden"
+      >
+        <div className="animate-marquee flex items-center gap-8 whitespace-nowrap w-max">
+          {[...marqueeItems, ...marqueeItems].map((name, i) => (
+            <span key={i} className="flex items-center gap-8">
+              <span className="text-sm font-medium text-zinc-300">{name}</span>
+              <span className="h-1 w-1 rounded-full bg-[#FC6700]/30" />
+            </span>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 }

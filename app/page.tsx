@@ -1,8 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import WhatWeDo from "@/components/WhatWeDo";
-import HowWeOperate from "@/components/HowWeOperate";
-import About from "@/components/About";
+import TrustStrip from "@/components/TrustStrip";
+import Products from "@/components/Products";
+import Careers from "@/components/Careers";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -11,9 +11,9 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <WhatWeDo />
-        <HowWeOperate />
-        <About />
+        <TrustStrip />
+        <Products />
+        <Careers />
       </main>
       <Footer />
     </>
