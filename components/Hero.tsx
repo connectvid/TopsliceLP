@@ -57,28 +57,13 @@ export default function Hero() {
           </a>
           <a
             href="#careers"
-            className="rounded-full border-2 border-[#FC6700]/30 px-8 py-4 text-[0.9rem] font-semibold text-[#FC6700] transition-all hover:bg-[#FC6700]/8 hover:border-[#FC6700]/50 active:scale-[0.97]"
+            className="group relative rounded-full bg-zinc-900 px-8 py-4 text-[0.9rem] font-semibold text-white shadow-lg shadow-zinc-900/25 transition-all hover:shadow-xl hover:shadow-zinc-900/35 hover:bg-zinc-800 active:scale-[0.97]"
           >
             Join the Team
+            <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
           </a>
         </motion.div>
 
-        {/* Stats */}
-        <motion.div
-          {...fade(0.3)}
-          className="mt-16 flex flex-wrap gap-10 sm:gap-14"
-        >
-          {[
-            ["10+", "Companies Built"],
-            ["3", "Verticals"],
-            ["2018", "Year Founded"],
-          ].map(([val, label]) => (
-            <div key={label}>
-              <p className="text-2xl sm:text-3xl font-bold text-[#FC6700]">{val}</p>
-              <p className="mt-1 text-sm text-zinc-500">{label}</p>
-            </div>
-          ))}
-        </motion.div>
       </div>
 
       {/* Category marquee */}
