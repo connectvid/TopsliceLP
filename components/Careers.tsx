@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import {
   MapPin,
   Clock,
@@ -13,7 +12,6 @@ import {
   Laptop,
   GraduationCap,
   Heart,
-  ArrowRight,
 } from "lucide-react";
 import { type LucideIcon } from "lucide-react";
 
@@ -76,23 +74,6 @@ const perks: Perk[] = [
   },
 ];
 
-const openRoles = [
-  {
-    title: "Business Development Intern",
-    type: "Paid Internship",
-    location: "Remote",
-    duration: "3-6 months",
-    href: "/careers/business-development-intern",
-  },
-  {
-    title: "VD/Editor Intern",
-    type: "Paid Internship",
-    location: "Remote",
-    duration: "3-6 months",
-    href: "/careers/vd-editor-intern",
-  },
-];
-
 const slideIn = (delay: number, fromLeft: boolean) => ({
   initial: { opacity: 0, x: fromLeft ? -20 : 20 } as const,
   whileInView: { opacity: 1, x: 0 } as const,
@@ -145,35 +126,23 @@ export default function Careers() {
           ))}
         </div>
 
-        {/* Open Roles */}
-        <motion.div {...fadeUp(0.3)} className="mt-16">
-          <h3 className="text-center text-xl font-bold text-zinc-900">
-            Open Roles
+        {/* General CTA */}
+        <motion.div
+          {...fadeUp(0.3)}
+          className="mt-14 rounded-2xl bg-[#FFF8F3] border border-orange-100/60 p-8 sm:p-10 text-center"
+        >
+          <h3 className="text-xl font-bold text-zinc-900">
+            Want to work with us?
           </h3>
-          <div className="mt-6 space-y-3">
-            {openRoles.map((role, i) => (
-              <motion.div key={role.title} {...fadeUp(0.32 + i * 0.05)}>
-                <Link
-                  href={role.href}
-                  className="group flex items-center justify-between rounded-2xl border border-orange-200/80 bg-[#FFF8F3] px-6 py-5 transition-all hover:border-[#FC6700]/25 hover:shadow-lg hover:shadow-orange-100/50"
-                >
-                  <div>
-                    <p className="text-[1rem] font-semibold text-zinc-900 group-hover:text-[#FC6700] transition-colors">
-                      {role.title}
-                    </p>
-                    <div className="mt-1 flex items-center gap-3 text-xs text-zinc-500">
-                      <span>{role.type}</span>
-                      <span className="text-zinc-300">&middot;</span>
-                      <span>{role.location}</span>
-                      <span className="text-zinc-300">&middot;</span>
-                      <span>{role.duration}</span>
-                    </div>
-                  </div>
-                  <ArrowRight className="h-4 w-4 text-zinc-300 group-hover:text-[#FC6700] group-hover:translate-x-1 transition-all" />
-                </Link>
-              </motion.div>
-            ))}
-          </div>
+          <p className="mt-2 text-sm text-zinc-600">
+            We&apos;re always looking for talented people. Drop us a line.
+          </p>
+          <a
+            href="mailto:careers@topslice.io?subject=I'd like to join Topslice"
+            className="mt-6 inline-flex rounded-full bg-[#FC6700] px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-[#E55D00] hover:shadow-lg hover:shadow-[#FC6700]/20 active:scale-[0.98]"
+          >
+            careers@topslice.io
+          </a>
         </motion.div>
       </div>
     </section>
