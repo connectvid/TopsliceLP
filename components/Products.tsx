@@ -10,11 +10,7 @@ import {
   FileText,
   MessagesSquare,
   Bot,
-  Link2,
-  Search,
-  CalendarClock,
   Sparkles,
-  Youtube,
   ArrowUpRight,
 } from "lucide-react";
 import { type LucideIcon } from "lucide-react";
@@ -104,33 +100,6 @@ const products: Product[] = [
     description:
       "Free AI chat with the top models in one place. Switch between leading LLMs without juggling subscriptions.",
   },
-  {
-    icon: Link2,
-    name: "Backlinky",
-    domain: "backlinky.io",
-    url: "https://backlinky.io",
-    category: "SaaS",
-    description:
-      "Buy and sell high-authority backlinks. A link-building marketplace that helps SaaS companies grow their SEO.",
-  },
-  {
-    icon: Search,
-    name: "Serply",
-    domain: "serply.io",
-    url: "https://serply.io",
-    category: "SaaS",
-    description:
-      "A fast, reliable Google Search API for developers and SEO tools that need clean, real-time results.",
-  },
-  {
-    icon: CalendarClock,
-    name: "Postara",
-    domain: "postara.app",
-    url: "https://postara.app",
-    category: "SaaS",
-    description:
-      "Your daily content engine. Plan, schedule, and publish across social platforms from one simple workspace.",
-  },
 
   // AI & Media
   {
@@ -141,15 +110,6 @@ const products: Product[] = [
     category: "AI & Media",
     description:
       "A free AI image generator that turns text prompts into striking artwork in seconds.",
-  },
-  {
-    icon: Youtube,
-    name: "YouTube Summarizer",
-    domain: "youtubesummarizer.com",
-    url: "https://youtubesummarizer.com",
-    category: "AI & Media",
-    description:
-      "Summarize any YouTube video with AI. Get the key points in seconds, free and instant, no signup required.",
   },
 ];
 
