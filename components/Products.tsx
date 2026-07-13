@@ -4,14 +4,17 @@ import { motion } from "framer-motion";
 import {
   Building2,
   Globe,
+  Mountain,
   ShieldCheck,
   Landmark,
   BadgeCheck,
   Hash,
+  Stamp,
   FileCheck2,
   FileText,
   Calculator,
   PiggyBank,
+  ReceiptText,
   MessagesSquare,
   Bot,
   Sparkles,
@@ -49,6 +52,15 @@ const products: Product[] = [
       "Form a Wyoming LLC fully online, with no US visit and no SSN. Guides, banking options, and tax help for international founders.",
   },
   {
+    icon: Mountain,
+    name: "Wyoming LLC",
+    domain: "wyomingllcformation.co",
+    url: "https://wyomingllcformation.co",
+    category: "Business Services",
+    description:
+      "Wyoming LLC formation done the Wyoming way. $497 total, line-item transparent, with state filing, registered agent, EIN, and bank applications.",
+  },
+  {
     icon: ShieldCheck,
     name: "Anonymous LLC",
     domain: "anonymousllc.co",
@@ -67,6 +79,15 @@ const products: Product[] = [
       "Form a Delaware LLC in 48 hours for $397 + state fee. Done-for-you filing with EIN and registered agent for non-residents.",
   },
   {
+    icon: Globe,
+    name: "Delaware LLC",
+    domain: "delewarellc.com",
+    url: "https://delewarellc.com",
+    category: "Business Services",
+    description:
+      "Form a Delaware LLC online from abroad. Fast filing, an EIN with no SSN, and US bank applications for non-US founders.",
+  },
+  {
     icon: BadgeCheck,
     name: "EIN",
     domain: "ein.so",
@@ -83,6 +104,15 @@ const products: Product[] = [
     category: "Business Services",
     description:
       "Your EIN in seven business days, guaranteed. A streamlined filing service for non-US business owners.",
+  },
+  {
+    icon: Stamp,
+    name: "EIN for LLC",
+    domain: "einforllc.co",
+    url: "https://einforllc.co",
+    category: "Business Services",
+    description:
+      "LLC-specialist EIN filing with the classification set correctly. Delivered in 10 business days or your money back.",
   },
   {
     icon: FileCheck2,
@@ -119,6 +149,15 @@ const products: Product[] = [
     category: "Business Services",
     description:
       "Engineer-led cost segregation studies that help property owners accelerate depreciation and cut their taxes.",
+  },
+  {
+    icon: ReceiptText,
+    name: "Form 5472",
+    domain: "form5472.tax",
+    url: "https://form5472.tax",
+    category: "Business Services",
+    description:
+      "Form 5472 and Pro Forma 1120 prepared, reviewed, and filed for foreign-owned US LLCs and corporations. $299 flat.",
   },
 
   // SaaS
