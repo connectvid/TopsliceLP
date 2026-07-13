@@ -5,10 +5,13 @@ import {
   Building2,
   Globe,
   ShieldCheck,
+  Landmark,
   BadgeCheck,
   Hash,
   FileCheck2,
   FileText,
+  Calculator,
+  PiggyBank,
   MessagesSquare,
   Bot,
   Sparkles,
@@ -55,6 +58,15 @@ const products: Product[] = [
       "Form an anonymous LLC in Wyoming, New Mexico, Delaware, or Nevada, with owner privacy built in from day one.",
   },
   {
+    icon: Landmark,
+    name: "Delaware LLC",
+    domain: "delawarellc.co",
+    url: "https://delawarellc.co",
+    category: "Business Services",
+    description:
+      "Form a Delaware LLC in 48 hours for $397 + state fee. Done-for-you filing with EIN and registered agent for non-residents.",
+  },
+  {
     icon: BadgeCheck,
     name: "EIN",
     domain: "ein.so",
@@ -89,6 +101,24 @@ const products: Product[] = [
     category: "Business Services",
     description:
       "A guided ITIN application service that prepares and submits your paperwork, ready within about seven days.",
+  },
+  {
+    icon: Calculator,
+    name: "SupaTax",
+    domain: "supatax.ai",
+    url: "https://supatax.ai",
+    category: "Business Services",
+    description:
+      "Free online tax tools and calculators that help founders estimate and understand their US business taxes.",
+  },
+  {
+    icon: PiggyBank,
+    name: "WeCostSeg",
+    domain: "wecostseg.com",
+    url: "https://wecostseg.com",
+    category: "Business Services",
+    description:
+      "Engineer-led cost segregation studies that help property owners accelerate depreciation and cut their taxes.",
   },
 
   // SaaS
