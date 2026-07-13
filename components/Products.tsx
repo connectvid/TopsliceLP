@@ -1,37 +1,80 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Monitor, Briefcase, Play } from "lucide-react";
+import {
+  Building2,
+  BadgeCheck,
+  FileCheck2,
+  MessagesSquare,
+  Bot,
+  Sparkles,
+  ArrowUpRight,
+} from "lucide-react";
 import { type LucideIcon } from "lucide-react";
 
-interface Category {
+interface Product {
   icon: LucideIcon;
-  title: string;
-  count: string;
+  name: string;
+  domain: string;
+  url: string;
+  category: string;
   description: string;
 }
 
-const categories: Category[] = [
+const products: Product[] = [
   {
-    icon: Briefcase,
-    title: "Business Services",
-    count: "4+",
+    icon: Building2,
+    name: "Wyoming LLC",
+    domain: "wyomingllc.xyz",
+    url: "https://wyomingllc.xyz",
+    category: "Business Services",
     description:
-      "Formation, compliance, and tax ID services. Helping entrepreneurs register and run businesses across multiple jurisdictions.",
+      "Form a US LLC in Wyoming, built for non-US founders. Registered agent, EIN, and compliance handled end to end.",
   },
   {
-    icon: Monitor,
-    title: "SaaS Platforms",
-    count: "3+",
+    icon: BadgeCheck,
+    name: "EIN",
+    domain: "ein.so",
+    url: "https://ein.so",
+    category: "Business Services",
     description:
-      "Software products across marketing, productivity, and team collaboration. Built for retention and organic growth.",
+      "Get a US federal tax ID (EIN) without an SSN. Fast, done-for-you filing for founders anywhere in the world.",
   },
   {
-    icon: Play,
-    title: "Media Properties",
-    count: "3+",
+    icon: FileCheck2,
+    name: "ITIN",
+    domain: "itin.so",
+    url: "https://itin.so",
+    category: "Business Services",
     description:
-      "Content-driven channels and digital publications. Built on programmatic SEO, editorial quality, and audience trust.",
+      "ITIN application service for non-US residents. Prepared and filed for you, typically within seven days.",
+  },
+  {
+    icon: MessagesSquare,
+    name: "BizReply",
+    domain: "bizreply.co",
+    url: "https://bizreply.co",
+    category: "SaaS",
+    description:
+      "AI that promotes your brand across social media. Finds relevant conversations and drafts on-brand replies.",
+  },
+  {
+    icon: Bot,
+    name: "ChatSonic",
+    domain: "chat-sonic.ai",
+    url: "https://chat-sonic.ai",
+    category: "SaaS",
+    description:
+      "Free AI chat with the top models in one place. Switch between leading LLMs without juggling subscriptions.",
+  },
+  {
+    icon: Sparkles,
+    name: "Open Journey",
+    domain: "openjourney.art",
+    url: "https://openjourney.art",
+    category: "AI & Media",
+    description:
+      "A free AI image generator that turns text prompts into striking artwork in seconds.",
   },
 ];
 
@@ -56,39 +99,54 @@ export default function Products() {
         <motion.div {...fadeUp(0)} className="text-center max-w-lg mx-auto">
           <p className="text-sm font-semibold text-[#FC6700]">What We Build</p>
           <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900">
-            Three verticals. 10+ companies.
+            The companies we operate.
           </h2>
           <p className="mt-3 text-zinc-600 leading-relaxed">
-            Everything we operate is built in-house, grown organically,
-            and designed to last.
+            A growing portfolio across business services, SaaS, and AI.
+            Everything built in-house, grown organically, and designed to last.
           </p>
         </motion.div>
 
-        <div className="mt-14 grid gap-4 sm:grid-cols-3">
-          {categories.map((cat, i) => (
-            <motion.div
-              key={cat.title}
-              {...scaleIn(0.08 + i * 0.08)}
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {products.map((product, i) => (
+            <motion.a
+              key={product.domain}
+              href={product.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              {...scaleIn(0.08 + i * 0.06)}
               whileHover={{ y: -4 }}
-              className="group relative rounded-2xl bg-white border border-orange-200/80 p-8 transition-all duration-300 hover:shadow-xl hover:shadow-orange-100/60 hover:border-[#FC6700]/25 overflow-hidden"
+              className="group relative flex flex-col rounded-2xl bg-white border border-orange-200/80 p-7 transition-all duration-300 hover:shadow-xl hover:shadow-orange-100/60 hover:border-[#FC6700]/25 overflow-hidden"
             >
               <div className="flex items-start justify-between">
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#FC6700]/10 group-hover:bg-[#FC6700]/15 transition-colors">
-                  <cat.icon className="h-5 w-5 text-[#FC6700]" strokeWidth={1.75} />
+                  <product.icon
+                    className="h-5 w-5 text-[#FC6700]"
+                    strokeWidth={1.75}
+                  />
                 </div>
-                <span className="text-2xl font-bold text-[#FC6700]/20 group-hover:text-[#FC6700]/40 transition-colors">
-                  {cat.count}
+                <ArrowUpRight className="h-5 w-5 text-zinc-300 transition-all group-hover:text-[#FC6700] group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </div>
+
+              <div className="mt-5 flex items-center gap-2">
+                <h3 className="text-lg font-bold text-zinc-900">
+                  {product.name}
+                </h3>
+                <span className="text-[0.7rem] font-semibold uppercase tracking-widest text-[#FC6700]/70">
+                  {product.category}
                 </span>
               </div>
-              <h3 className="mt-5 text-lg font-bold text-zinc-900">
-                {cat.title}
-              </h3>
-              <p
-                className="mt-2 text-sm leading-relaxed text-zinc-600"
-                dangerouslySetInnerHTML={{ __html: cat.description }}
-              />
-              <div className="absolute bottom-0 left-8 right-8 h-0.5 bg-[#FC6700] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-            </motion.div>
+
+              <p className="mt-2 text-sm leading-relaxed text-zinc-600">
+                {product.description}
+              </p>
+
+              <span className="mt-4 text-[0.8rem] font-medium text-zinc-400 group-hover:text-[#FC6700] transition-colors">
+                {product.domain}
+              </span>
+
+              <div className="absolute bottom-0 left-7 right-7 h-0.5 bg-[#FC6700] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+            </motion.a>
           ))}
         </div>
 
@@ -96,7 +154,7 @@ export default function Products() {
           {...fadeUp(0.35)}
           className="mt-10 text-center text-sm font-semibold text-[#FC6700]"
         >
-          Built from scratch. Growing every day.
+          And more in the works. Built from scratch, growing every day.
         </motion.p>
       </div>
     </section>
