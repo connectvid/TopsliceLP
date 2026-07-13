@@ -3,11 +3,18 @@
 import { motion } from "framer-motion";
 import {
   Building2,
+  ShieldCheck,
   BadgeCheck,
+  Hash,
   FileCheck2,
+  FileText,
   MessagesSquare,
   Bot,
+  Link2,
+  Search,
+  CalendarClock,
   Sparkles,
+  Youtube,
   ArrowUpRight,
 } from "lucide-react";
 import { type LucideIcon } from "lucide-react";
@@ -22,6 +29,7 @@ interface Product {
 }
 
 const products: Product[] = [
+  // Business Services
   {
     icon: Building2,
     name: "Wyoming LLC",
@@ -30,6 +38,15 @@ const products: Product[] = [
     category: "Business Services",
     description:
       "Form a US LLC in Wyoming, built for non-US founders. Registered agent, EIN, and compliance handled end to end.",
+  },
+  {
+    icon: ShieldCheck,
+    name: "Anonymous LLC",
+    domain: "anonymousllc.co",
+    url: "https://anonymousllc.co",
+    category: "Business Services",
+    description:
+      "Form an anonymous LLC in Wyoming, New Mexico, Delaware, or Nevada, with owner privacy built in from day one.",
   },
   {
     icon: BadgeCheck,
@@ -41,6 +58,15 @@ const products: Product[] = [
       "Get a US federal tax ID (EIN) without an SSN. Fast, done-for-you filing for founders anywhere in the world.",
   },
   {
+    icon: Hash,
+    name: "EIN Number",
+    domain: "ein-number.com",
+    url: "https://ein-number.com",
+    category: "Business Services",
+    description:
+      "Your EIN in seven business days, guaranteed. A streamlined filing service for non-US business owners.",
+  },
+  {
     icon: FileCheck2,
     name: "ITIN",
     domain: "itin.so",
@@ -49,6 +75,17 @@ const products: Product[] = [
     description:
       "ITIN application service for non-US residents. Prepared and filed for you, typically within seven days.",
   },
+  {
+    icon: FileText,
+    name: "ITIN Number",
+    domain: "itin-number.com",
+    url: "https://itin-number.com",
+    category: "Business Services",
+    description:
+      "A guided ITIN application service that prepares and submits your paperwork, ready within about seven days.",
+  },
+
+  // SaaS
   {
     icon: MessagesSquare,
     name: "BizReply",
@@ -68,6 +105,35 @@ const products: Product[] = [
       "Free AI chat with the top models in one place. Switch between leading LLMs without juggling subscriptions.",
   },
   {
+    icon: Link2,
+    name: "Backlinky",
+    domain: "backlinky.io",
+    url: "https://backlinky.io",
+    category: "SaaS",
+    description:
+      "Buy and sell high-authority backlinks. A link-building marketplace that helps SaaS companies grow their SEO.",
+  },
+  {
+    icon: Search,
+    name: "Serply",
+    domain: "serply.io",
+    url: "https://serply.io",
+    category: "SaaS",
+    description:
+      "A fast, reliable Google Search API for developers and SEO tools that need clean, real-time results.",
+  },
+  {
+    icon: CalendarClock,
+    name: "Postara",
+    domain: "postara.app",
+    url: "https://postara.app",
+    category: "SaaS",
+    description:
+      "Your daily content engine. Plan, schedule, and publish across social platforms from one simple workspace.",
+  },
+
+  // AI & Media
+  {
     icon: Sparkles,
     name: "Open Journey",
     domain: "openjourney.art",
@@ -76,12 +142,21 @@ const products: Product[] = [
     description:
       "A free AI image generator that turns text prompts into striking artwork in seconds.",
   },
+  {
+    icon: Youtube,
+    name: "YouTube Summarizer",
+    domain: "youtubesummarizer.com",
+    url: "https://youtubesummarizer.com",
+    category: "AI & Media",
+    description:
+      "Summarize any YouTube video with AI. Get the key points in seconds, free and instant, no signup required.",
+  },
 ];
 
 const scaleIn = (delay: number) => ({
   initial: { opacity: 0, scale: 0.95, y: 12 } as const,
   whileInView: { opacity: 1, scale: 1, y: 0 } as const,
-  viewport: { once: true, margin: "-100px" } as const,
+  viewport: { once: true, margin: "-80px" } as const,
   transition: { duration: 0.5, delay, ease: [0.25, 0.4, 0.25, 1] },
 });
 
@@ -114,7 +189,7 @@ export default function Products() {
               href={product.url}
               target="_blank"
               rel="noopener noreferrer"
-              {...scaleIn(0.08 + i * 0.06)}
+              {...scaleIn(0.05 + (i % 3) * 0.06)}
               whileHover={{ y: -4 }}
               className="group relative flex flex-col rounded-2xl bg-white border border-orange-200/80 p-7 transition-all duration-300 hover:shadow-xl hover:shadow-orange-100/60 hover:border-[#FC6700]/25 overflow-hidden"
             >
