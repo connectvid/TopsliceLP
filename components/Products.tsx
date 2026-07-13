@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import {
   Building2,
+  Globe,
   ShieldCheck,
   BadgeCheck,
   Hash,
@@ -29,11 +30,20 @@ const products: Product[] = [
   {
     icon: Building2,
     name: "Wyoming LLC",
+    domain: "wyomingllc.co",
+    url: "https://wyomingllc.co",
+    category: "Business Services",
+    description:
+      "Form a Wyoming LLC as a non-resident from $297 + state fee. EIN, operating agreement, and registered agent included, with 24 to 48 hour formation.",
+  },
+  {
+    icon: Globe,
+    name: "Wyoming LLC",
     domain: "wyomingllc.xyz",
     url: "https://wyomingllc.xyz",
     category: "Business Services",
     description:
-      "Form a US LLC in Wyoming, built for non-US founders. Registered agent, EIN, and compliance handled end to end.",
+      "Form a Wyoming LLC fully online, with no US visit and no SSN. Guides, banking options, and tax help for international founders.",
   },
   {
     icon: ShieldCheck,
