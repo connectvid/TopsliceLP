@@ -12,7 +12,6 @@ import {
   Stamp,
   FileCheck2,
   FileText,
-  Calculator,
   PiggyBank,
   ReceiptText,
   MessagesSquare,
@@ -131,15 +130,6 @@ const products: Product[] = [
     category: "Business Services",
     description:
       "A guided ITIN application service that prepares and submits your paperwork, ready within about seven days.",
-  },
-  {
-    icon: Calculator,
-    name: "SupaTax",
-    domain: "supatax.ai",
-    url: "https://supatax.ai",
-    category: "Business Services",
-    description:
-      "Free online tax tools and calculators that help founders estimate and understand their US business taxes.",
   },
   {
     icon: PiggyBank,
