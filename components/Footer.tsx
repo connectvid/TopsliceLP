@@ -5,8 +5,9 @@ import { motion } from "framer-motion";
 import Logo from "./Logo";
 
 const navLinks = [
-  { label: "What We Build", href: "#products" },
-  { label: "Careers", href: "#careers" },
+  { label: "What We Build", href: "/#products" },
+  { label: "Careers", href: "/#careers" },
+  { label: "Privacy Policy", href: "/privacy" },
 ];
 
 const offices = [
@@ -136,9 +137,14 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-orange-200/60 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <p className="text-xs text-zinc-400">
-            &copy; {new Date().getFullYear()} Topslice HQ LLC. All rights reserved.
-          </p>
+          <div className="flex items-center gap-4">
+            <p className="text-xs text-zinc-400">
+              &copy; {new Date().getFullYear()} Topslice HQ LLC. All rights reserved.
+            </p>
+            <a href="/privacy" className="text-xs text-zinc-400 hover:text-[#FC6700] transition-colors">
+              Privacy
+            </a>
+          </div>
           <div className="flex items-center gap-2 text-xs text-zinc-400">
             <Globe className="h-3.5 w-3.5 text-[#FC6700]" />
             Remote-first &middot; New York &middot; Dhaka
